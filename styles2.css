@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English+SC&display=swap');
+
+body {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(30, 20, 10, 0.9)), 
+                url('https://source.unsplash.com/1600x900/?stone-wall,dark');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    color: #d4af37;
+    font-family: "IM Fell English SC", serif;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/foggy-breath.png');
+    opacity: 0.1;
+    animation: fog-animation 15s infinite linear;
+    z-index: 1;
+}
+
+@keyframes fog-animation {
+    0% { transform: translateX(-5%) translateY(-5%); }
+    50% { transform: translateX(5%) translateY(5%); }
+    100% { transform: translateX(-5%) translateY(-5%); }
+}
+
+h1, h2 {
+    font-family: "Pirata One", cursive;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(255, 140, 0, 0.8), 0 0 30px rgba(255, 69, 0, 0.6);
+    animation: antorcha 2s infinite alternate;
+    margin: 10px;
+}
+
+@keyframes antorcha {
+    0% { text-shadow: 0 0 10px rgba(255, 140, 0, 0.8); }
+    50% { text-shadow: 0 0 20px rgba(255, 69, 0, 0.6); }
+    100% { text-shadow: 0 0 10px rgba(255, 140, 0, 0.8); }
+}
+
+form {
+    background: rgba(30, 20, 10, 0.9);
+    border: 3px solid #8b5a2b;
+    padding: 20px;
+    width: 50%;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.5);
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+input, textarea {
+    width: 90%;
+    padding: 10px;
+    background: transparent;
+    color: white;
+    border: 2px solid #8b5a2b;
+    font-size: 1rem;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+button {
+    background: linear-gradient(to bottom, #5a3e1b, #3b2812);
+    color: #d4af37;
+    border: 3px solid #8b5a2b;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    font-family: "IM Fell English SC", serif;
+    margin: 5px;
+}
+
+button:hover {
+    background: #8b5a2b;
+    color: black;
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    
+    form {
+        width: 80%;
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+
+    form {
+        width: 90%;
+        padding: 10px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+}
+.checkbox-container {
+    display: flex;
+    align-items: center; 
+    gap: 8px;
+    margin-bottom: 10px; 
+}
+
+.checkbox-container input[type="checkbox"] {
+    appearance: none; 
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 2px solid #d4af37;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+
+.checkbox-container input[type="checkbox"]:checked {
+    background-color: #d4af37;
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
+}
+
+
+.checkbox-container input[type="checkbox"]::after {
+    content: "✔";
+    font-size: 14px;
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+
+.checkbox-container input[type="checkbox"]:checked::after {
+    display: block;
+}
+
+
+.checkbox-container label {
+    font-size: 1.2rem;
+    color: #d4af37;
+    cursor: pointer;
+}
+
+
+@media (max-width: 480px) {
+    .checkbox-container {
+        gap: 5px; 
+    }
+    .checkbox-container label {
+        font-size: 1rem;
+    }
+}
